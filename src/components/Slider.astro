@@ -1,0 +1,75 @@
+---
+import SlideInfo from "../components/SlideInfo.astro";
+import "swiper/css";
+import Picture from "../components/Picture.astro";
+const { caso } = Astro.props;
+---
+
+<style>
+
+  h3 {
+    @apply font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+
+  img {
+    @apply h-[66vh] xg:h-[85vh] w-full object-cover object-center grayscale;
+  }
+
+  [class*="swiper-button"] {
+    @apply absolute h-full top-0 left-0 w-15% z-50;
+    cursor: url(img/icons/arrow-left.svg), auto;
+  }
+
+  .swiper-button-next{
+    left: inherit;
+    right: 0;
+    cursor: url(img/icons/arrow-right.svg), auto;
+  }
+
+</style>
+
+<!-- Slider main container -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {
+      caso.img.map((img, index) => (
+        <div class="swiper-slide">
+          {index === 0 && (
+            <SlideInfo
+              title={caso.title}
+              subtitle={caso.subtitle}
+              desc={caso.desc}
+            />
+          )}
+          <Picture url={img} style="h-[66vh] xg:h-[90vh]" />
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</div>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation } from 'swiper/modules';
+
+  function swiperSlider() {
+    const SwiperSlider = new Swiper(".swiper", {
+      modules: [Navigation],
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      speed: 750,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+
+  swiperSlider();
+  document.addEventListener("astro:after-swap", swiperSlider);
+</script>

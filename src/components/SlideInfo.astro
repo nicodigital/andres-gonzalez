@@ -1,0 +1,22 @@
+---
+const { title, subtitle, desc } = Astro.props;
+---
+<style>
+  .info {
+    @apply absolute w-full h-full p-3 flex flex-col justify-between pointer-events-none z-50;
+  }
+</style>
+
+<div class="info">
+    <div class="title">
+      <h2 class="mb-2">{title}</h2>
+      <p>
+        <Fragment set:html={subtitle} />
+      </p>
+    </div>
+    <div>
+      <p class="xg:w-[25%]">
+        <Fragment set:html={desc} />
+      </p>
+    </div>
+  </div>
