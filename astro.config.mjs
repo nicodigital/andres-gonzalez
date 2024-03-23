@@ -2,21 +2,19 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import netlify from "@astrojs/netlify";
 
-import icon from "astro-icon";
-
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon()],
+  integrations: [tailwind()],
   output: 'static',
 
   // Site y Base son para colocar un Build en producción - En este caso también configurar HOME_URL en .env
   // Aqui va el dominio
   // site: 'https://nicolook.com',
-  // site: 'http://localhost:4321',
+  // site: 'http://localhost/AG/dist/',
 
   // Aqui va el folder, en caso de root -> /
   // base: '/astro',
-  // base: '/',
+  base: '/',
 
   adapter: netlify(),
   prefetch: true,
