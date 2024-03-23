@@ -1,0 +1,74 @@
+---
+const { currentLocale } = Astro;
+import "@fontsource/inconsolata";
+import { ViewTransitions } from "astro:transitions";
+
+import getSlug from '@/js/getSlug';
+import getFirstUrlTerm from '@/js/getFirstUrlTerm';
+
+import "@/css/global.css";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import Favicon from "@/components/Favicon.astro";
+import Seo from "@/components/Seo.astro";
+// import getSlug from '@/js/getSlug'
+
+const {
+  title = "Título de 65 caracteres",
+  claim = "Frase Coooool!",
+  description = "Descripción de 150 caracteres",
+  image,
+  robots,
+} = Astro.props;
+
+/* Get Page */
+const currentPath = Astro.url.pathname;
+const currPage = getSlug(currentPath);
+const firstUrlTerm = getFirstUrlTerm(currentPath);
+let dataPage = "";
+
+if( currPage === '' ){
+  dataPage = 'home';
+}else if( currPage != firstUrlTerm ){
+  dataPage = firstUrlTerm;
+}else{
+  dataPage = currPage;
+}
+
+---
+<html lang={currentLocale} >
+  <head>
+    <meta charset="utf-8" />
+    <Favicon />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <Seo {title} {claim} {description} {image} {robots} />
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <ViewTransitions />
+  </head>
+  <body id="top" data-page={dataPage} data-scroll="top" >
+
+    {
+      currPage !== "gracias" &&  <Header />
+    }
+
+    <main>
+      <slot />
+    </main>
+
+    {
+      currPage !== "gracias" && <Footer />
+    }
+
+    <script> import "@/js/globals";</script>
+    
+  </body>
+</html>

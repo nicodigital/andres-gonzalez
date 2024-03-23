@@ -1,0 +1,49 @@
+---
+// export const prerender = false;
+import Layout from "../../layout/Layout.astro";
+
+/* GET LANG */
+import { getI18N } from '../../i18n'
+const { currentLocale } = Astro;
+const i18n = getI18N({currentLocale});
+
+/* Slider */
+import Slider from "../Slider.astro";
+import { CASES } from '../../data/cases'
+
+---
+<Layout
+  title="Andrés Gonzalez"
+  claim={i18n.ROLE}
+  description={i18n.METADESC}
+  >
+
+  <section id="profile" class="container section">
+    <div class='row'>
+        <div class='col-[1/13]'>
+            <div class="flex">
+              <p class="text-h1">
+                <span class="text-body mr-5 xg:mr-[20rem]">
+                  {i18n.PROFILE}
+                </span> {i18n.DESC}
+              </p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="works"  class='container row section'>
+   
+      <div class='col-[1/13]'>
+        {
+          CASES.map( caso => (
+            <div class="mb-10 xg:mb-15">
+              <Slider {caso} />
+            </div>
+          ))
+        }
+      </div>
+   
+  </section>
+
+</Layout>

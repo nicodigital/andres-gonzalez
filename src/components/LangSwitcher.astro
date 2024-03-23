@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, langMirrorPage } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+let transURL = "";
+
+if( lang === 'en' ){
+  transURL = langMirrorPage( Astro.url.pathname, lang, 'es', 'es' );
+}else{ // es
+  transURL = langMirrorPage( Astro.url.pathname, lang, 'es', 'en' );
+}
+
+---
+{
+  lang === "es" && (
+    <a href={currentPath} > Es </a>
+    <a href={transURL} class="opacity-[0.6]"  >En</a>
+  )
+}
+
+{
+  lang === "en" && (
+    <a href={transURL} class="opacity-[0.6]"  >Es</a>
+    <a href={currentPath} >En</a>
+  )
+}
+
