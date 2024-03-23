@@ -7,7 +7,7 @@ export default {
 				'invalid': '#fe0000',
 			},
 			fontFamily: {
-				sans: ['Inconsolata', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif' ],
+				sans: ['NeueHaasGroteskDisp Pro', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif' ],
 				// serif: ['Roboto Slab'],
 			},
 			fontSize: {
