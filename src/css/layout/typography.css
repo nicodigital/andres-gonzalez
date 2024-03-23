@@ -1,6 +1,6 @@
 @font-face {
 font-family: 'NeueHaasGroteskDisp Pro';
-src: url('./fonts/NHaasGroteskDSPro-55Rg.woff2') format('woff2');
+src: url('/fonts/NHaasGroteskDSPro-55Rg.woff2') format('woff2');
 font-weight: 500;
     font-style: normal;
     font-display: swap;
