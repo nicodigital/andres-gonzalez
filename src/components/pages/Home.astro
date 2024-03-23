@@ -11,6 +11,15 @@ const i18n = getI18N({currentLocale});
 import Slider from "../Slider.astro";
 import { CASES } from '../../data/cases'
 
+const AIR_TOKEN = import.meta.env.AIRTABLE_TOKEN;
+const response = await fetch('https://api.airtable.com/v0/appD21ZvBoARY0ZGt/Cases',{
+  headers: {
+    'Authorization': `Bearer ${AIR_TOKEN}`
+  }
+});
+const DATA = await response.json();
+const RECORDS = DATA.records;
+
 ---
 <Layout
   title="Andrés Gonzalez"
@@ -36,7 +45,7 @@ import { CASES } from '../../data/cases'
    
       <div class='col-[1/13]'>
         {
-          CASES.map( caso => (
+          RECORDS.map( caso => (
             <div class="mb-10 xg:mb-15">
               <Slider {caso} />
             </div>

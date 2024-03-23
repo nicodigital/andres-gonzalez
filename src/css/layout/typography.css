@@ -1,10 +1,10 @@
-/*@font-face {
-font-family: 'Akkurat';
-src: url('../../Akkurat-Bold.woff2') format('woff2'),
-    url('../../Akkurat-Bold.woff') format('woff');
-font-weight: bold;
-font-style: normal;
-}*/
+@font-face {
+font-family: 'NeueHaasGroteskDisp Pro';
+src: url('./fonts/NHaasGroteskDSPro-55Rg.woff2') format('woff2');
+font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
   --html: 10px;
@@ -25,7 +25,7 @@ p {
 }
 
 .text-h1 {
-  @apply text-balance leading-[1];
+  @apply text-balance leading-[1.15];
 }
 /*//////////////////////////////////////////////////////////*/
 /*///////////////////////// 375px //////////////////////////*/

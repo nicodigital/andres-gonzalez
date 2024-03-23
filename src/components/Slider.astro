@@ -3,6 +3,12 @@ import SlideInfo from "../components/SlideInfo.astro";
 import "swiper/css";
 import Picture from "../components/Picture.astro";
 const { caso } = Astro.props;
+
+const TITLE = caso['fields']['Title'];
+const SUBTITLE = caso['fields']['Subtitle'];
+const DESC = caso['fields']['Description'];
+const ATTACHMENTS = caso['fields']['Archivos adjuntos'];
+
 ---
 
 <style>
@@ -32,16 +38,20 @@ const { caso } = Astro.props;
 <div class="swiper">
   <div class="swiper-wrapper">
     {
-      caso.img.map((img, index) => (
+      ATTACHMENTS.map((img, index) => (
+
         <div class="swiper-slide">
+
           {index === 0 && (
             <SlideInfo
-              title={caso.title}
-              subtitle={caso.subtitle}
-              desc={caso.desc}
+              title={TITLE}
+              subtitle={SUBTITLE}
+              desc={DESC}
             />
           )}
-          <Picture url={img} style="h-[66vh] xg:h-[90vh]" />
+
+          <Picture url={img.url} style="h-[66vh] xg:h-[90vh]" />
+
         </div>
       ))
     }
