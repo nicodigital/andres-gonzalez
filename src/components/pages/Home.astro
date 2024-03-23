@@ -9,16 +9,24 @@ const i18n = getI18N({currentLocale});
 
 /* Slider */
 import Slider from "../Slider.astro";
-import { CASES } from '../../data/cases'
 
 const AIR_TOKEN = import.meta.env.AIRTABLE_TOKEN;
-const response = await fetch('https://api.airtable.com/v0/appD21ZvBoARY0ZGt/Cases',{
+const response = await fetch('https://api.airtable.com/v0/appS0ZQtfBjBChQfm/Cases',{
   headers: {
     'Authorization': `Bearer ${AIR_TOKEN}`
   }
 });
+
 const DATA = await response.json();
-const RECORDS = DATA.records;
+const ROWS = DATA.records;
+
+// Función para ordenar los objetos según el campo "order"
+function orderData(response) {
+  return response.sort((a, b) => a.fields.order - b.fields.order);
+}
+
+// Llamada a la función para ordenar la response
+const RECORDS = orderData(ROWS);
 
 ---
 <Layout
