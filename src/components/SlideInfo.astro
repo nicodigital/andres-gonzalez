@@ -1,5 +1,7 @@
 ---
 const { title, subtitle, desc } = Astro.props;
+
+console.log(subtitle)
 ---
 <style>
   .info {
@@ -11,7 +13,7 @@ const { title, subtitle, desc } = Astro.props;
     <div class="title">
       <h2 class="mb-2">{title}</h2>
       <p>
-        <Fragment set:html={subtitle} />
+        <Fragment set:html={ subtitle.replace(/\n/g, "<br>") } />
       </p>
     </div>
     <div>

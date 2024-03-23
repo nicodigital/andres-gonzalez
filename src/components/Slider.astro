@@ -11,28 +11,6 @@ const SUBTITLE = caso['fields'][`subtitle_${currentLocale}`];
 const DESC = caso['fields'][`description_${currentLocale}`];
 const ATTACHMENTS = caso['fields']['Archivos adjuntos'];
 
-async function checkAsset(url) {
-    try {
-        const response = await fetch(url, { method: 'HEAD' });
-        if (response.ok) {
-            const contentType = response.headers.get('content-type');
-            if (contentType && contentType.startsWith('image')) {
-                return "imagen";
-            } else if (contentType && contentType.startsWith('video')) {
-                return "video";
-            } else {
-                return "desconocido";
-            }
-        } else {
-            // Si hay un problema con la solicitud, devolver "desconocido"
-            return "desconocido";
-        }
-    } catch (error) {
-        // Si ocurre un error durante la solicitud, devolver "desconocido"
-        return "desconocido";
-    }
-}
-
 ---
 
 <style>
