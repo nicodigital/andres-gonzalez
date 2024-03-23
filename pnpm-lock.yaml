@@ -7,13 +7,10 @@ settings:
 dependencies:
   '@astrojs/netlify':
     specifier: ^4.1.0
-    version: 4.1.1(astro@4.5.8)
+    version: 4.1.1(astro@4.5.9)
   '@astrojs/tailwind':
     specifier: ^5.1.0
-    version: 5.1.0(astro@4.5.8)(tailwindcss@3.4.1)
-  '@fontsource/inconsolata':
-    specifier: ^5.0.16
-    version: 5.0.17
+    version: 5.1.0(astro@4.5.9)(tailwindcss@3.4.1)
   '@iconify-json/mdi':
     specifier: ^1.1.64
     version: 1.1.64
@@ -22,7 +19,7 @@ dependencies:
     version: 0.0.0-insiders.565cd3e(postcss@8.4.38)
   astro:
     specifier: ^4.0.8
-    version: 4.5.8
+    version: 4.5.9
   astro-icon:
     specifier: ^1.0.2
     version: 1.1.0
@@ -103,14 +100,14 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/netlify@4.1.1(astro@4.5.8):
+  /@astrojs/netlify@4.1.1(astro@4.5.9):
     resolution: {integrity: sha512-ynCldf0BafT0s/E6hOed8YqrxyD48iukxtPBTatQytg/XsSr16cQ6em8HbMMV3pe4sE5xImdXtQcI1Xg01rUHw==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
     dependencies:
       '@astrojs/underscore-redirects': 0.3.3
       '@netlify/functions': 2.6.0
-      astro: 4.5.8
+      astro: 4.5.9
       esbuild: 0.19.12
     dev: false
 
@@ -121,13 +118,13 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/tailwind@5.1.0(astro@4.5.8)(tailwindcss@3.4.1):
+  /@astrojs/tailwind@5.1.0(astro@4.5.9)(tailwindcss@3.4.1):
     resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.5.8
+      astro: 4.5.9
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -815,10 +812,6 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/inconsolata@5.0.17:
-    resolution: {integrity: sha512-MgXWGy4wXXaiIAo5hHGGz0E+zZe7yJ4JMhADsI2/fchLrbzRRvKKwgLwHmt4Cd5Evci7fCXU7qPGPtmYhpRMTg==}
-    dev: false
-
   /@iconify-json/mdi@1.1.64:
     resolution: {integrity: sha512-zGeo5TjhNFAY6FmSDBLAzDO811t77r6v/mDi7CAL9w5eXqKez6bIjk8R9AL/RHIeq44ALP4Ozr4lMqFTkHr7ug==}
     dependencies:
@@ -1332,8 +1325,8 @@ packages:
       - supports-color
     dev: false
 
-  /astro@4.5.8:
-    resolution: {integrity: sha512-bhKsoZQWT6LW8aYMvTGglZTPa3rYRbcdc2buiJyFPCvSWOOyZmxqpp6vtQ+x6fXxD8P1NecM/c4g5GaPi+MokQ==}
+  /astro@4.5.9:
+    resolution: {integrity: sha512-GheU72Goz7dYQNKaqTxB2H49cNvHfahGSbNkTvMXk+gyHf/g633qadqlO2ZQbTUacoUWmDzvS5fhMZt2/w4naQ==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1393,12 +1386,12 @@ packages:
       tsconfck: 3.0.3
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.3
-      vitefu: 0.2.5(vite@5.2.3)
+      vite: 5.2.4
+      vitefu: 0.2.5(vite@5.2.4)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
       zod: 3.22.4
-      zod-to-json-schema: 3.22.4(zod@3.22.4)
+      zod-to-json-schema: 3.22.5(zod@3.22.4)
     optionalDependencies:
       sharp: 0.32.6
     transitivePeerDependencies:
@@ -4640,8 +4633,8 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite@5.2.3:
-    resolution: {integrity: sha512-+i1oagbvkVIhEy9TnEV+fgXsng13nZM90JQbrcPrf6DvW2mXARlz+DK7DLiDP+qeKoD1FCVx/1SpFL1CLq9Mhw==}
+  /vite@5.2.4:
+    resolution: {integrity: sha512-vjFghvHWidBTinu5TCymJk/lRHlR5ljqB83yugr0HA1xspUPdOZHqbqDLnZ8f9/jINrtFHTCYYyIUi+o+Q5iyg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -4675,7 +4668,7 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /vitefu@0.2.5(vite@5.2.3):
+  /vitefu@0.2.5(vite@5.2.4):
     resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
@@ -4683,7 +4676,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.3
+      vite: 5.2.4
     dev: false
 
   /web-namespaces@2.0.1:
@@ -4785,8 +4778,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: false
 
-  /zod-to-json-schema@3.22.4(zod@3.22.4):
-    resolution: {integrity: sha512-2Ed5dJ+n/O3cU383xSY28cuVi0BCQhF8nYqWU5paEpl7fVdqdAmiLdqLyfblbNdfOFwFfi/mqU4O1pwc60iBhQ==}
+  /zod-to-json-schema@3.22.5(zod@3.22.4):
+    resolution: {integrity: sha512-+akaPo6a0zpVCCseDed504KBJUQpEW5QZw7RMneNmKw+fGaML1Z9tUNLnHHAC8x6dzVRO1eB2oEMyZRnuBZg7Q==}
     peerDependencies:
       zod: ^3.22.4
     dependencies:
