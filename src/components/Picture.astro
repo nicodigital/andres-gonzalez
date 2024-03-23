@@ -6,7 +6,7 @@ const webpUrl = url.replace(/\.(png|jpg)$/i, '.webp');
 <picture>
 	<source srcset={ webpUrl } type="image/webp">
 	<source srcset={ url } type={`image/${ext}`}>
-	<img class={style} src={ url } alt={alt} decoding="async" />
+	<img class={style} src={ url } alt={alt} loading={lazy} decoding="async" />
 </picture>
 
 <style>
