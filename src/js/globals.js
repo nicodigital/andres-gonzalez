@@ -1,6 +1,6 @@
 import checkDevice from '../js/checkDevice'
 // import smoothScroll from "../js/smoothscroll"
-import snapSmoothScroll from "../js/snapSmoothScroll"
+// import snapSmoothScroll from "../js/snapSmoothScroll"
 import scrollMarkers from "../js/scrollMarkers"
 import smartMenu from "../js/smartMenu"
 import menuMobile from '../js/menuMobile'
@@ -68,13 +68,13 @@ document.addEventListener('scroll', function () {
 document.addEventListener('DOMContentLoaded', function () {
 	menuMobile();
 	Motion(device);
-	snapSmoothScroll();
+	// snapSmoothScroll();
 });
 
 document.addEventListener('astro:after-swap', function () {
 	menuMobile();
 	Motion(device);
-	snapSmoothScroll();
+	// snapSmoothScroll();
 });
 
 /*/////////////////////////////////////////////////////////////////////*/
