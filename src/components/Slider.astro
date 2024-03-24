@@ -3,6 +3,7 @@ import SlideInfo from "../components/SlideInfo.astro";
 import "swiper/css";
 import Picture from "../components/Picture.astro";
 import Video from "../components/Video.astro";
+
 const { caso } = Astro.props;
 const { currentLocale } = Astro;
 
@@ -26,6 +27,19 @@ const ATTACHMENTS = caso['fields']['media_files'];
     cursor: url(/img/icons/arrow-right.svg), auto;
   }
 
+  img,video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: theme("screens.xg") ) {
+    .swiper{
+      /* height: calc(100vh - 12rem); */
+      height: calc(100vh - 10rem);
+    }
+  }
+
 </style>
 
 <!-- Slider main container -->
@@ -44,9 +58,9 @@ const ATTACHMENTS = caso['fields']['media_files'];
             />
           ) }
 
-          { media.type.includes("image") && <Picture url={media.url} style="w-full h-[66vh] xg:h-[100vh] object-cover" /> }
+          { media.type.includes("image") && <Picture url={media.url} /> }
 
-          { media.type.includes("video") && <Video url={media.url} style="w-full h-[66vh] xg:h-[100vh] object-cover" /> }
+          { media.type.includes("video") && <Video url={media.url} controls="off" muted="on" /> }
 
         </div>
       ))
@@ -61,12 +75,13 @@ const ATTACHMENTS = caso['fields']['media_files'];
 <script>
   import Swiper from "swiper";
   import { Navigation } from 'swiper/modules';
+  import videoPlayOnView from "../js/videoPlayOnView";
 
   function swiperSlider() {
     const SwiperSlider = new Swiper(".swiper", {
       modules: [Navigation],
       slidesPerView: 1,
-      spaceBetween: 20,
+      spaceBetween: 0,
       loop: true,
       speed: 750,
       navigation: {
@@ -77,5 +92,8 @@ const ATTACHMENTS = caso['fields']['media_files'];
   }
 
   swiperSlider();
+  videoPlayOnView();
   document.addEventListener("astro:after-swap", swiperSlider);
+  document.addEventListener("astro:after-swap", videoPlayOnView);
+
 </script>

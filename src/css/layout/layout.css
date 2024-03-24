@@ -10,11 +10,12 @@ html {
   html {
     scroll-behavior: auto;
   }
-}
+} 
 
 body {
-  @apply text-body;
+  @apply text-body w-full xg:h-screen xg:overflow-hidden;
 }
+
 
 .row {
   @apply grid grid-cols-4 gap-1 sm:grid-cols-6 md:grid-cols-12 md:gap-2;
@@ -27,6 +28,22 @@ body {
 .ctr-gap-right{padding-right: var(--container-gap)}
 .ctr-gap-top{padding-top: var(--container-gap)}
 .ctr-gap-bottom{padding-bottom: var(--container-gap)}
+
+.section {
+
+  @apply w-full py-1 xg:py-0 xg:flex xg:items-end xg:h-screen;
+  scroll-snap-align: start;
+  scroll-padding: 2rem;
+
+  &-t {
+    @apply pt-6 sm:pt-8 xg:pt-12 3xl:pt-12;
+  }
+
+  &-b {
+    @apply pb-6 sm:pb-8 xg:pb-10 3xl:pb-12;
+  }
+
+}
 
 /*//////////////////////////////////////////////////////////*/
 /*/////////////////////////// XS ///////////////////////////*/
@@ -53,9 +70,18 @@ body {
 /*//////////////////////////////////////////////////////////*/
 
 @media (min-width: theme("screens.xg") ) {
+
   :root {
     --container-gap: 3rem;
   }
+
+  main{
+    @apply w-full h-full;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
 }
 
 /*//////////////////////////////////////////////////////////*/

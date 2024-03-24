@@ -6,12 +6,9 @@ import Menu from "../components/Menu.astro";
 import LangSwitcher from '../components/LangSwitcher.astro'
 import { getI18N } from '../i18n'
 
-const homeUrl = import.meta.env.HOME_URL ?? '/';
-
 /* GET LANG */
 const { currentLocale } = Astro;
 const i18n = getI18N({currentLocale});
-
 
 ---
 <header class="container row py-2 xg:py-4 mb-4" >
@@ -22,9 +19,9 @@ const i18n = getI18N({currentLocale});
 
         <Menu items={
             [
-                [ i18n.PROFILE , '#profile' ],
-                [i18n.WORKS , `#works`],
-                [i18n.CONTACT , '#contact']
+                [ i18n.PROFILE , '#profile', 'togg' ],
+                [i18n.WORKS , `#works`, 'togg'],
+                [i18n.CONTACT , '#contact', 'togg']
             ]
         } />
 
@@ -33,7 +30,7 @@ const i18n = getI18N({currentLocale});
     </div>
 
     <div class="col-[11/13] hidden xg:flex justify-end">
-        <div class="flex gap-2">
+        <div class="flex gap-2 xg:pr-2">
            <LangSwitcher />
         </div>
     </div>

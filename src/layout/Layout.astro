@@ -2,8 +2,8 @@
 const { currentLocale } = Astro;
 import { ViewTransitions } from "astro:transitions";
 
-import getSlug from '@/js/getSlug';
-import getFirstUrlTerm from '@/js/getFirstUrlTerm';
+import getSlug from "@/js/getSlug";
+import getFirstUrlTerm from "@/js/getFirstUrlTerm";
 
 import "@/css/global.css";
 import Header from "./Header.astro";
@@ -26,16 +26,16 @@ const currPage = getSlug(currentPath);
 const firstUrlTerm = getFirstUrlTerm(currentPath);
 let dataPage = "";
 
-if( currPage === '' ){
-  dataPage = 'home';
-}else if( currPage != firstUrlTerm ){
+if (currPage === "") {
+  dataPage = "home";
+} else if (currPage != firstUrlTerm) {
   dataPage = firstUrlTerm;
-}else{
+} else {
   dataPage = currPage;
 }
-
 ---
-<html lang={currentLocale} >
+
+<html lang={currentLocale}>
   <head>
     <meta charset="utf-8" />
     <Favicon />
@@ -53,21 +53,17 @@ if( currPage === '' ){
     <meta name="format-detection" content="telephone=no" />
     <ViewTransitions />
   </head>
-  <body id="top" data-page={dataPage} data-scroll="top" >
+  <body id="top" data-page={dataPage} data-scroll="top">
 
-    {
-      currPage !== "gracias" &&  <Header />
-    }
+    {currPage !== "gracias" && <Header />}
 
     <main>
       <slot />
+      {currPage !== "gracias" && <Footer />}
     </main>
 
-    {
-      currPage !== "gracias" && <Footer />
-    }
-
-    <script> import "@/js/globals";</script>
-    
+    <script>
+      import "@/js/globals";
+    </script>
   </body>
 </html>
