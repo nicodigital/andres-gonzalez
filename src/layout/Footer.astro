@@ -6,35 +6,39 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<footer id="contact"  class="container pt-5 pb-10 xg:pt-20 xg:pb-7">
-  <div class="row mb-20 xg:mb-[30rem]">
-    <div class="col-[1/13] xg:col-[1/3]">
-      {i18n.CONTACT}
-    </div>
-    <div class="col-[1/13] xg:col-[3/7]">
-      <a
-        href="mailto:andrersgonzalezdg@gmail.com"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        andrersgonzalezdg@gmail.com
-      </a>
-    </div>
-    <div class="col-[1/13] xg:col-[7/13] mt-10 xg:mt-0">
-      <p>
-        <Fragment set:html={i18n.FAREWELL} />
-      </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-[1/3] xg:col-[1/7]">
-      <Brand alt="Andrés González" />
-    </div>
-    <div class="col-[3/5] xg:col-[7/11]">
-      <div class="flex justify-end xg:justify-start">
-        <p class="w-fit">Montevideo, <br> Uruguay</p>
+<footer id="contact" class="section">
+  <div class="container py-10 xg:pt-20 xg:pb-7">
+    
+    <div class="row mb-20 xg:mb-[30rem]">
+      <div class="col-[1/13] xg:col-[1/3]">
+        {i18n.CONTACT}
+      </div>
+      <div class="col-[1/13] xg:col-[3/7]">
+        <a
+          href="mailto:andrersgonzalezdg@gmail.com"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          andrersgonzalezdg@gmail.com
+        </a>
+      </div>
+      <div class="col-[1/13] xg:col-[7/13] mt-10 xg:mt-0">
+        <p>
+          <Fragment set:html={i18n.FAREWELL} />
+        </p>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-[1/3] xg:col-[1/7]">
+        <Brand alt="Andrés González" />
+      </div>
+      <div class="col-[3/5] xg:col-[7/11]">
+        <div class="flex justify-end xg:justify-start">
+          <p class="w-fit">Montevideo, Uruguay</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </footer>

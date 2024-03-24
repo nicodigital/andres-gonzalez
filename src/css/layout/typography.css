@@ -8,8 +8,8 @@ font-weight: 500;
 
 :root {
   --html: 10px;
-  --h1: 2.5rem;
-  --text-body: 1.8rem;
+  --h1: 2.3rem;
+  --text-body: 1.6rem;
 }
 
 html {
@@ -21,7 +21,7 @@ body {
 }
 
 p {
-  @apply text-pretty;
+  @apply text-pretty leading-[1.2];
 }
 
 .text-h1 {
@@ -76,7 +76,7 @@ p {
 
 @media (min-width: theme("screens.xl")) {
   :root {
-    --html: 8.5px;
+    --html: 7.5px;
   }
 }
 
@@ -86,7 +86,7 @@ p {
 
 @media (min-width: theme("screens.2xl")) {
   :root {
-    --html: 9px;
+    --html: 8px;
   }
 }
 
@@ -96,7 +96,7 @@ p {
 
 @media (min-width: theme("screens.3xl")) {
   :root {
-    --html: 9.5px;
+    --html: 9px;
   }
 }
 
