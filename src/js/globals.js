@@ -2,11 +2,11 @@ import checkDevice from '../js/checkDevice'
 // import smoothScroll from "../js/smoothscroll"
 // import snapSmoothScroll from "../js/snapSmoothScroll"
 import scrollMarkers from "../js/scrollMarkers"
-import smartMenu from "../js/smartMenu"
+// import smartMenu from "../js/smartMenu"
 import menuMobile from '../js/menuMobile'
-import Motion from '../js/Motion'
-// import Rellax from "rellax";
-// import Rellax from "rellax";
+// import Motion from '../js/Motion'
+
+
 
 /*/////////////////////////////////////////////////////////////////////*/
 /*///////////////////////////// GET BASIC /////////////////////////////*/
@@ -62,18 +62,18 @@ window.addEventListener("orientationchange", getBasic);
 
 document.addEventListener('scroll', function () {
 	scrollMarkers();
-	smartMenu();
+	// smartMenu();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
 	menuMobile();
-	Motion(device);
+	// Motion(device);
 	// snapSmoothScroll();
 });
 
 document.addEventListener('astro:after-swap', function () {
 	menuMobile();
-	Motion(device);
+	// Motion(device);
 	// snapSmoothScroll();
 });
 

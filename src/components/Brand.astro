@@ -2,14 +2,8 @@
 import { getLangFromUrl,  useTranslatedPath } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const transPath = useTranslatedPath(lang);
-
-const homeUrl = import.meta.env.HOME_URL ?? '/';
-const { width } = Astro.props;
-
-// console.log(siteUrl);
-
 ---
 
 <a href={transPath('/')} data-astro-prefetch="hover" >
-    Andrés Gonzalez
+    Andrés González
 </a>

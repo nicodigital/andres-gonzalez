@@ -14,7 +14,7 @@ const i18n = getI18N({ currentLocale });
         {i18n.CONTACT}
       </div>
       <div class="col-[1/13] xg:col-[3/7]">
-        <a
+        <a class="link"
           href="mailto:andrersgonzalezdg@gmail.com"
           target="_blank"
           rel="noreferrer noopener"
@@ -22,10 +22,13 @@ const i18n = getI18N({ currentLocale });
           andrersgonzalezdg@gmail.com
         </a>
       </div>
-      <div class="col-[1/13] xg:col-[7/13] mt-10 xg:mt-0">
-        <p>
-          <Fragment set:html={i18n.FAREWELL} />
-        </p>
+      <div class="col-[1/13] xg:col-[7/13] mt-10 xg:mt-0 flex flex-col">
+        <a href="https://www.linkedin.com/in/andresgonzalezdg/" class="link" target='_blank' rel='noreferrer noopener' >
+          Linkedin
+        </a>
+        <a href="https://www.behance.net/andresgonzalezdg/" class="link" target='_blank' rel='noreferrer noopener' >
+          Behance
+        </a>
       </div>
     </div>
 
