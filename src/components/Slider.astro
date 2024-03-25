@@ -7,10 +7,12 @@ import Video from "../components/Video.astro";
 const { caso } = Astro.props;
 const { currentLocale } = Astro;
 
-const TITLE = caso['fields'][`title_${currentLocale}`];
-const SUBTITLE = caso['fields'][`subtitle_${currentLocale}`];
-const DESC = caso['fields'][`description_${currentLocale}`];
-const ATTACHMENTS = caso['fields']['media_files'];
+const ACF = caso.acf;
+
+const TITLE = ACF[`titulo_${currentLocale}`];
+const SUBTITLE = ACF[`subtitle_${currentLocale}`];
+const DESC = ACF[`desc_${currentLocale}`];
+const MEDIA = ACF['media'];
 
 ---
 
@@ -46,7 +48,7 @@ const ATTACHMENTS = caso['fields']['media_files'];
 <div class="swiper">
   <div class="swiper-wrapper">
     {
-      ATTACHMENTS.map((media, index) => (
+      MEDIA.map((media, index) => (
 
         <div class="swiper-slide">
 
