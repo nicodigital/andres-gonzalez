@@ -57,7 +57,7 @@ const MEDIA = ACF['media_files'];
 
           { media.type == 'Image' && <Picture url={media.img.url} style="w-full aspect-video object-cover" alt={media.img.title} />  }
 
-          {  media.type == 'Video' && <Video url={media.video.url} style="w-full aspect-video object-cover"  controls="off" muted="on" /> }
+          {  media.type == 'Video' && <Video url={media.video.url} poster={media.img.url} style="w-full aspect-video object-cover"  controls="off" muted="on" /> }
 
         </div>
       ))
