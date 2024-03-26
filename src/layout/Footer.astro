@@ -4,6 +4,12 @@ import { getI18N } from "../i18n";
 /* GET LANG */
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+
+/* GET OPTIONS */
+const getOptions = await fetch(import.meta.env.API_OPTIONS);
+const OPTIONS = await getOptions.json();
+const REDES = OPTIONS.acf.redes_sociales;
+
 ---
 
 <footer id="contact" class="section">
@@ -19,16 +25,18 @@ const i18n = getI18N({ currentLocale });
           target="_blank"
           rel="noreferrer noopener"
         >
-          andrersgonzalezdg@gmail.com
+          { OPTIONS.acf.my_email }
         </a>
       </div>
       <div class="col-[1/13] xg:col-[7/13] mt-10 xg:mt-0 flex flex-col">
-        <a href="https://www.linkedin.com/in/andresgonzalezdg/" class="link" target='_blank' rel='noreferrer noopener' >
-          Linkedin
-        </a>
-        <a href="https://www.behance.net/andresgonzalezdg/" class="link" target='_blank' rel='noreferrer noopener' >
-          Behance
-        </a>
+        { 
+        REDES.map( red =>(
+          <a href={red.social_link} class="link" target='_blank' rel='noreferrer noopener' >
+            {red.social_name}
+          </a>
+        ) )
+        }
+        
       </div>
     </div>
 

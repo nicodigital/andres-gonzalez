@@ -10,7 +10,6 @@ const i18n = getI18N({ currentLocale });
 /* Slider */
 import Slider from "../Slider.astro";
 
-
 const getCases = await fetch(import.meta.env.API_CASES);
 const CASES = await getCases.json();
 
