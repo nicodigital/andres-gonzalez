@@ -10,13 +10,13 @@ const {
 
 ---
 
-<video {style} preload playsinline 
+<video {style} preload="none" playsinline 
 controls = { controls === 'on' }
 loop = { loop === 'on' }
 muted = { muted === 'on' }
 poster = { poster !== '' ? poster : null }
 >
-  <source src={ url } type="video/mp4">
+  <source src={ url } type="video/mp4"  >
     Your browser does not support the video tag.
 </video>
 
