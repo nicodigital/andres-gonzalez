@@ -10,6 +10,11 @@ const i18n = getI18N({ currentLocale });
 /* Slider */
 import Slider from "../Slider.astro";
 
+/* GET OPTIONS */
+const getOptions = await fetch(import.meta.env.API_OPTIONS);
+const OPTIONS = await getOptions.json();
+const INTRO = OPTIONS['acf']['intro_'+currentLocale];
+
 const getCases = await fetch(import.meta.env.API_CASES);
 const CASES = await getCases.json();
 
@@ -24,7 +29,7 @@ const CASES = await getCases.json();
             <span class="text-body mr-5 xg:mr-[20rem]">
               {i18n.PROFILE}
             </span>
-            {i18n.DESC}
+            {INTRO}
           </p>
         </div>
       </div>
