@@ -16,7 +16,9 @@ const {
   title = "Título de 65 caracteres",
   claim = "Frase Coooool!",
   description = "Descripción de 150 caracteres",
-  image,
+  image = 'img/1200x600.jpg',
+  author = 'Andrés González',
+  author_url = 'https://andresgonzalezdg.com/',
   robots,
 } = Astro.props;
 
@@ -41,7 +43,7 @@ if (currPage === "") {
     <Favicon />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <Seo {title} {claim} {description} {image} {robots} />
+    <Seo {title} {claim} {description} {image} {author} {author_url} {robots} />
     <meta http-equiv="cleartype" content="on" />
     <meta name="MobileOptimized" content="width" />
     <meta name="HandheldFriendly" content="true" />
