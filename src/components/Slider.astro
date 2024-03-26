@@ -12,7 +12,7 @@ const ACF = caso.acf;
 const TITLE = ACF[`titulo_${currentLocale}`];
 const SUBTITLE = ACF[`subtitle_${currentLocale}`];
 const DESC = ACF[`desc_${currentLocale}`];
-const MEDIA = ACF['media'];
+const MEDIA = ACF['media_files'];
 
 ---
 
@@ -29,11 +29,6 @@ const MEDIA = ACF['media'];
     cursor: url(/img/icons/arrow-right.svg), auto;
   }
 
-  img,video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
   @media (min-width: theme("screens.xg") ) {
     .swiper{
@@ -60,9 +55,9 @@ const MEDIA = ACF['media'];
             />
           ) }
 
-          { media.type.includes("image") && <Picture url={media.url} /> }
+          { media.type == 'Image' && <Picture url={media.img.url} style="w-full object-cover" alt={media.img.title} />  }
 
-          { media.type.includes("video") && <Video url={media.url} controls="off" muted="on" /> }
+          {  media.type == 'Video' && <Video url={media.video.url} poster={media.img.url} style="w-full object-cover"  controls="off" muted="on" /> }
 
         </div>
       ))
