@@ -16,7 +16,6 @@ function videoPlayOnView() {
       // Si el video está completamente visible, reproducirlo
       if (entry.isIntersecting) {
         const video = entry.target;
-        video.load();
         video.play();
       } else {
         // Pausar el video si no está visible
