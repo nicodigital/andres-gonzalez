@@ -15,20 +15,20 @@ const REDES = OPTIONS.acf.redes_sociales;
 <footer id="contact" class="section">
   <div class="container py-10 xg:pt-20 xg:pb-7">
     
-    <div class="row mb-20 xg:mb-[30rem]">
+    <div class="row mb-15 xg:mb-[30rem]">
       <div class="col-[1/13] xg:col-[1/3]">
         {i18n.CONTACT}
       </div>
       <div class="col-[1/13] xg:col-[3/7]">
-        <a class="link"
-          href={ `mailto:${OPTIONS.acf.my_email}` }"
+        <a class="link block mt-[-1rem] xg:mt-0"
+          href={ `mailto:${OPTIONS.acf.my_email}` }
           target="_blank"
           rel="noreferrer noopener"
         >
           { OPTIONS.acf.my_email }
         </a>
       </div>
-      <div class="col-[1/13] xg:col-[7/13] mt-10 xg:mt-0 flex flex-col">
+      <div class="col-[1/13] xg:col-[7/13] mt-15 xg:mt-0 flex flex-col">
         { 
         REDES.map( red =>(
           <a href={red.social_link} class="link" target='_blank' rel='noreferrer noopener' >
@@ -36,18 +36,15 @@ const REDES = OPTIONS.acf.redes_sociales;
           </a>
         ) )
         }
-        
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-[1/3] xg:col-[1/7]">
+    <div class="row gap-y-0">
+      <div class="col-[1/5] xg:col-[1/7]">
         <Brand alt="Andrés González" />
       </div>
-      <div class="col-[3/5] xg:col-[7/11]">
-        <div class="flex justify-end xg:justify-start">
-          <p class="w-fit">Montevideo, Uruguay</p>
-        </div>
+      <div class="col-[1/5] xg:col-[7/11]">
+          <p class="w-fit mt-[-1rem] xg:mt-0">Montevideo, Uruguay</p>
       </div>
     </div>
 
