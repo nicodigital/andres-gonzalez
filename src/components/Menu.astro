@@ -1,13 +1,47 @@
 ---
 const { items } = Astro.props;
-import '../css/layout/menu.css';
+import "../css/layout/menu.css";
+
+/* GET LANG */
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
+
 <nav>
-    {
-        items.map( item =>(
-        <a href={ item[1] } class={ item[2] } data-astro-prefetch="hover" >
-            { item[0] }
-        </a>
-        ) )
-    }
+  {
+    items.map((item) => (
+      <a href={item[1]} class={item[2]}>
+        {item[0]}
+      </a>
+    ))
+  }
 </nav>
+
+<script>
+  function scrollAnchor() {
+    const navLinks = document.querySelectorAll("nav a");
+
+    navLinks.forEach((link) => {
+      // Añade un evento de clic a cada enlace
+      link.addEventListener("click", function (event) {
+        // Previene la acción por defecto del enlace
+        event.preventDefault();
+
+        // Obtiene el destino del ancla desde el atributo href
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        // Si el elemento objetivo existe, realiza el scroll suave
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", scrollAnchor);
+  document.addEventListener("astro:after-swap", scrollAnchor);
+</script>
